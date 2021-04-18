@@ -6,6 +6,28 @@
 //
 
 import UIKit
+
+extension UIButton {
+    func attributerTitle(firstPart: String, secondPart: String) {
+        let atts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.87), .font: UIFont.systemFont(ofSize: 16)]
+        let attributedTitle = NSMutableAttributedString(string: "\(firstPart)",
+                                                        attributes: atts)
+        let boldAtts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.87), .font: UIFont.boldSystemFont(ofSize: 16)]
+        attributedTitle.append(NSAttributedString(string: secondPart,
+                                                  attributes: boldAtts))
+        
+        setAttributedTitle(attributedTitle, for: .normal)
+    }
+    
+    func logAndSignButtonTitle(placeholder: String) {
+        setTitle(placeholder, for: .normal)
+        setTitleColor(.white, for: .normal)
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
+        layer.cornerRadius = 5
+        setHeight(50)
+    }
+}
  
 extension UIView {
     func anchor(top: NSLayoutYAxisAnchor? = nil,

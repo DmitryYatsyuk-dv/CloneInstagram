@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3216F4BE262C7E3C0030D011 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3216F4BD262C7E3C0030D011 /* CustomTextField.swift */; };
 		323207632621F04900AC1F45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323207622621F04900AC1F45 /* AppDelegate.swift */; };
 		323207652621F04900AC1F45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323207642621F04900AC1F45 /* SceneDelegate.swift */; };
 		323207672621F04900AC1F45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323207662621F04900AC1F45 /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3216F4BD262C7E3C0030D011 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		3232075F2621F04900AC1F45 /* CloneInstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloneInstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		323207622621F04900AC1F45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		323207642621F04900AC1F45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				32931F5B2625BDB8001C0598 /* FeedCell.swift */,
+				3216F4BD262C7E3C0030D011 /* CustomTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3216F4BE262C7E3C0030D011 /* CustomTextField.swift in Sources */,
 				323207672621F04900AC1F45 /* ViewController.swift in Sources */,
 				3249034F262A0318008D49E7 /* LoginController.swift in Sources */,
 				32931F5C2625BDB8001C0598 /* FeedCell.swift in Sources */,
