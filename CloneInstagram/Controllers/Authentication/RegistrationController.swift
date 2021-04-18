@@ -36,6 +36,11 @@ class RegistrationController: UIViewController {
     private let signUpButton: UIButton = {
         let button = UIButton(type: .system)
         button.logAndSignButtonTitle(placeholder: "Sign Up")
+        
+        //TODO: formIsValid
+        button.isEnabled = true
+        button.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
+        
         return button
     }()
     

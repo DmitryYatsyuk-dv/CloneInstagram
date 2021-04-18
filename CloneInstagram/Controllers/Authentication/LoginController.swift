@@ -11,6 +11,8 @@ class LoginController: UIViewController {
     
     //MARK: - Properties
     
+    private var viewModel = LoginViewModel()
+    
     private let iconImage: UIImageView = {
         let iv = UIImageView(image: #imageLiteral(resourceName: "Instagram_logo_white"))
         iv.contentMode = .scaleAspectFill
@@ -53,7 +55,7 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        
+        configureNotificationObservers()
     }
     
     //MARK: - Actions
@@ -62,6 +64,21 @@ class LoginController: UIViewController {
         print("DEBUG: show sign up...")
         let controller = RegistrationController()
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc
+    func textDidChange(sender: UITextField) {
+        if sender == emailTextField {
+            print("DEBUG: Inside of emailTextField")
+            viewModel.email = sender.text
+        } else {
+            print("DEBUG: Inside of passwordTextField")
+            viewModel.password = sender.text
+        }
+        print("DEBUG: View model form is Valid \(viewModel.formIsValid)")
+        loginButton.backgroundColor = viewModel.buttonBackgroundColor
+        loginButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+        loginButton.isEnabled = viewModel.formIsValid
     }
     
     //MARK: - Helpers
@@ -93,5 +110,11 @@ class LoginController: UIViewController {
         dontHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
     }
     
+    //Activating the registration button
+    func configureNotificationObservers() {
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+
+    }
     
 }

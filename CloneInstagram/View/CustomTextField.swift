@@ -21,6 +21,7 @@ class CustomTextField: UITextField {
         borderStyle = .none
         textColor = .white
         keyboardType = .emailAddress
+        autocorrectionType = .no
         keyboardAppearance = .dark
         backgroundColor = UIColor(white: 1, alpha: 0.1)
         setHeight(50)

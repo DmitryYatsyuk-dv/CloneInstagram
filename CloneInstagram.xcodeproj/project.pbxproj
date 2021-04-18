@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3216F4BE262C7E3C0030D011 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3216F4BD262C7E3C0030D011 /* CustomTextField.swift */; };
+		3216F4C1262C95650030D011 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3216F4C0262C95650030D011 /* AuthenticationViewModel.swift */; };
 		323207632621F04900AC1F45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323207622621F04900AC1F45 /* AppDelegate.swift */; };
 		323207652621F04900AC1F45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323207642621F04900AC1F45 /* SceneDelegate.swift */; };
 		323207672621F04900AC1F45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323207662621F04900AC1F45 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		3216F4BD262C7E3C0030D011 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		3216F4C0262C95650030D011 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		3232075F2621F04900AC1F45 /* CloneInstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloneInstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		323207622621F04900AC1F45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		323207642621F04900AC1F45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		3232077A2621F05400AC1F45 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3216F4C0262C95650030D011 /* AuthenticationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				32931F5C2625BDB8001C0598 /* FeedCell.swift in Sources */,
 				323207892621F23B00AC1F45 /* ImageSelectorController.swift in Sources */,
 				3232078D2621F25500AC1F45 /* NotificationController.swift in Sources */,
+				3216F4C1262C95650030D011 /* AuthenticationViewModel.swift in Sources */,
 				32931F5F2625BEF8001C0598 /* Extension.swift in Sources */,
 				323207862621F23100AC1F45 /* SearchController.swift in Sources */,
 				323207632621F04900AC1F45 /* AppDelegate.swift in Sources */,
