@@ -11,6 +11,8 @@ class RegistrationController: UIViewController {
     
     //MARK: - Properties
     
+    private var viewModel = RegistrationViewModel()
+    
     private let plusPhotoButton : UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "plus_photo"), for: .normal)
@@ -36,11 +38,6 @@ class RegistrationController: UIViewController {
     private let signUpButton: UIButton = {
         let button = UIButton(type: .system)
         button.logAndSignButtonTitle(placeholder: "Sign Up")
-        
-        //TODO: formIsValid
-        button.isEnabled = true
-        button.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
-        
         return button
     }()
     
@@ -55,7 +52,7 @@ class RegistrationController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        
+        configureNotificationObservers()
     }
     
     //MARK: - Action
@@ -63,6 +60,22 @@ class RegistrationController: UIViewController {
     func handleShowLogin() {
         print("DEBUG: show log in..")
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc
+    func textDidChange(sender: UITextField) {
+        if sender == emailTextField {
+            print("DEBUG: Inside of emailTextField")
+            viewModel.email = sender.text
+        } else if sender == passwordTextField {
+            print("DEBUG: Inside of passwordTextField")
+            viewModel.password = sender.text
+        } else if sender == fullnameTextField {
+            viewModel.fullname = sender.text
+        } else {
+            viewModel.username = sender.text
+        }
+        updateForm()
     }
     
     
@@ -89,5 +102,23 @@ class RegistrationController: UIViewController {
         view.addSubview(alreadyHaveAccountButton)
         alreadyHaveAccountButton.centerX(inView: view)
         alreadyHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
+    }
+    
+    func configureNotificationObservers() {
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        fullnameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        usernameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+
+    }
+}
+
+//MARK: - FormViewModel
+
+extension RegistrationController: FormViewModel {
+    func updateForm() {
+        signUpButton.backgroundColor = viewModel.buttonBackgroundColor
+        signUpButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+        signUpButton.isEnabled = viewModel.formIsValid
     }
 }
