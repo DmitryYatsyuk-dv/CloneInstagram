@@ -40,6 +40,7 @@ struct LoginViewModel: AuthenticationViewModel {
     }
 }
 
+//Activating the registration button
 struct RegistrationViewModel: AuthenticationViewModel {
     var email: String?
     var password: String?

@@ -116,6 +116,7 @@ class LoginController: UIViewController {
 }
 
 //MARK: - FormViewModel
+//Activating the registration button
 
 extension LoginController: FormViewModel {
     func updateForm() {
