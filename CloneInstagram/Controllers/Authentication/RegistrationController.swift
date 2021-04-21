@@ -12,6 +12,8 @@ class RegistrationController: UIViewController {
     //MARK: - Properties
     
     private var viewModel = RegistrationViewModel()
+    private var profileImage: UIImage?
+    
     
     private let plusPhotoButton : UIButton = {
         let button = UIButton(type: .system)
@@ -39,6 +41,7 @@ class RegistrationController: UIViewController {
     private let signUpButton: UIButton = {
         let button = UIButton(type: .system)
         button.logAndSignButtonTitle(placeholder: "Sign Up")
+        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -57,6 +60,24 @@ class RegistrationController: UIViewController {
     }
     
     //MARK: - Action
+    
+    @objc
+    func handleSignUp() {
+        
+        guard
+            let email = emailTextField.text,
+            let password = passwordTextField.text,
+            let fullname = fullnameTextField.text,
+            let username = usernameTextField.text,
+            let profileImage = self.profileImage else { return }
+        
+        let credentials = AuthCredentials(email: email, password: password,
+                                          fullname: fullname, username: username,
+                                          profileImage: profileImage)
+        
+        AuthService.registerUser(withCredential: credentials)
+    }
+    
     @objc
     func handleShowLogin() {
         print("DEBUG: show log in..")
@@ -81,8 +102,8 @@ class RegistrationController: UIViewController {
     
     @objc
     func handleProfilePhotoSelect() {
-    print("DEBUG: Show Photo Library here...")
-         
+        print("DEBUG: Show Photo Library here...")
+        
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = true
@@ -120,7 +141,7 @@ class RegistrationController: UIViewController {
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         fullnameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         usernameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-
+        
     }
 }
 
@@ -141,6 +162,7 @@ extension RegistrationController: UIImagePickerControllerDelegate, UINavigationC
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         guard let selectedImage = info[.editedImage] as? UIImage else { return }
+        profileImage = selectedImage
         
         plusPhotoButton.layer.cornerRadius = plusPhotoButton.frame.width / 2
         plusPhotoButton.layer.masksToBounds = true
