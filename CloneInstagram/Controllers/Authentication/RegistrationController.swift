@@ -64,18 +64,24 @@ class RegistrationController: UIViewController {
     @objc
     func handleSignUp() {
         
-        guard
-            let email = emailTextField.text,
-            let password = passwordTextField.text,
-            let fullname = fullnameTextField.text,
-            let username = usernameTextField.text,
-            let profileImage = self.profileImage else { return }
+        guard let email = emailTextField.text?.lowercased() else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let fullname = fullnameTextField.text else { return }
+        guard let username = usernameTextField.text else { return }
+        guard let profileImage = self.profileImage else { return }
         
-        let credentials = AuthCredentials(email: email, password: password,
-                                          fullname: fullname, username: username,
+        let credentials = AuthCredentials(email: email,
+                                          password: password,
+                                          fullname: fullname,
+                                          username: username,
                                           profileImage: profileImage)
         
-        AuthService.registerUser(withCredential: credentials)
+        AuthService.registerUser(withCredential: credentials) { error in
+            if let error = error {
+                print("DEBUG: (handleSignUp)Failed register user: \(error.localizedDescription)")
+            }
+            print("DEBUG: Successfully registered user with firestore..")
+        }
     }
     
     @objc
@@ -87,10 +93,10 @@ class RegistrationController: UIViewController {
     @objc
     func textDidChange(sender: UITextField) {
         if sender == emailTextField {
-            print("DEBUG: Inside of emailTextField")
+            //            print("DEBUG: Inside of emailTextField")
             viewModel.email = sender.text
         } else if sender == passwordTextField {
-            print("DEBUG: Inside of passwordTextField")
+            //            print("DEBUG: Inside of passwordTextField")
             viewModel.password = sender.text
         } else if sender == fullnameTextField {
             viewModel.fullname = sender.text
