@@ -34,6 +34,7 @@ class LoginController: UIViewController {
     private let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.logAndSignButtonTitle(placeholder: "Log In")
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
     
@@ -59,6 +60,22 @@ class LoginController: UIViewController {
     }
     
     //MARK: - Actions
+    
+    @objc
+    func handleLogin() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        AuthService.logUserIn(withEmail: email, password: password) { (result, error) in
+            if let error = error {
+                print("DEBUG: Failed to log user in: \(error.localizedDescription)")
+                return
+            }
+            print("DEBUG: Successfully to log user in..")
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     @objc
     func handleShowSignUp() {
         print("DEBUG: show sign up...")
@@ -69,10 +86,10 @@ class LoginController: UIViewController {
     @objc
     func textDidChange(sender: UITextField) {
         if sender == emailTextField {
-            print("DEBUG: Inside of emailTextField")
+//            print("DEBUG: Inside of emailTextField")
             viewModel.email = sender.text
         } else {
-            print("DEBUG: Inside of passwordTextField")
+//            print("DEBUG: Inside of passwordTextField")
             viewModel.password = sender.text
         }
         updateForm()
