@@ -25,6 +25,8 @@
 		323207942621F26E00AC1F45 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323207932621F26E00AC1F45 /* ProfileController.swift */; };
 		3249034F262A0318008D49E7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3249034E262A0318008D49E7 /* LoginController.swift */; };
 		32490353262A0322008D49E7 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32490352262A0322008D49E7 /* RegistrationController.swift */; };
+		3268100A2631EE1500912FFE /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326810092631EE1500912FFE /* ProfileCell.swift */; };
+		3268100E2631EE5E00912FFE /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3268100D2631EE5E00912FFE /* ProfileHeader.swift */; };
 		32931F5C2625BDB8001C0598 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32931F5B2625BDB8001C0598 /* FeedCell.swift */; };
 		32931F5F2625BEF8001C0598 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32931F5E2625BEF8001C0598 /* Extension.swift */; };
 		32EB01A7262DCBE2001923B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32EB01A6262DCBE2001923B6 /* GoogleService-Info.plist */; };
@@ -52,6 +54,8 @@
 		323207932621F26E00AC1F45 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		3249034E262A0318008D49E7 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		32490352262A0322008D49E7 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		326810092631EE1500912FFE /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		3268100D2631EE5E00912FFE /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		32931F5B2625BDB8001C0598 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		32931F5E2625BEF8001C0598 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		32EB01A6262DCBE2001923B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -153,6 +157,7 @@
 		3232077B2621F05600AC1F45 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3268100C2631EE4800912FFE /* Profile */,
 				32931F5B2625BDB8001C0598 /* FeedCell.swift */,
 				3216F4BD262C7E3C0030D011 /* CustomTextField.swift */,
 			);
@@ -181,6 +186,15 @@
 				32490352262A0322008D49E7 /* RegistrationController.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		3268100C2631EE4800912FFE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				326810092631EE1500912FFE /* ProfileCell.swift */,
+				3268100D2631EE5E00912FFE /* ProfileHeader.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		33593809B5E4623E56B8DF02 /* Pods */ = {
@@ -308,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3216F4BE262C7E3C0030D011 /* CustomTextField.swift in Sources */,
+				3268100E2631EE5E00912FFE /* ProfileHeader.swift in Sources */,
 				323207672621F04900AC1F45 /* ViewController.swift in Sources */,
 				3249034F262A0318008D49E7 /* LoginController.swift in Sources */,
 				32931F5C2625BDB8001C0598 /* FeedCell.swift in Sources */,
@@ -322,6 +337,7 @@
 				323207832621F22200AC1F45 /* FeedController.swift in Sources */,
 				3232077F2621F0D900AC1F45 /* MainTabController.swift in Sources */,
 				322A795026305DF80003D011 /* ImageUploader.swift in Sources */,
+				3268100A2631EE1500912FFE /* ProfileCell.swift in Sources */,
 				323207652621F04900AC1F45 /* SceneDelegate.swift in Sources */,
 				32490353262A0322008D49E7 /* RegistrationController.swift in Sources */,
 			);

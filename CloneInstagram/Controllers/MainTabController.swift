@@ -50,9 +50,10 @@ class MainTabController: UITabBarController {
                                                         selectedImage: #imageLiteral(resourceName: "like_selected"),
                                                         rootViewController: NotificationController())
         
+        let profileLayout = UICollectionViewFlowLayout()
         let profile = templateNavigationController(unselectedImage: #imageLiteral(resourceName: "profile_unselected"),
                                                    selectedImage: #imageLiteral(resourceName: "profile_selected"),
-                                                   rootViewController: ProfileController())
+                                                   rootViewController: ProfileController(collectionViewLayout: profileLayout))
         
         viewControllers = [feed, search, imageSelector, notification, profile]
         tabBar.tintColor = .black
