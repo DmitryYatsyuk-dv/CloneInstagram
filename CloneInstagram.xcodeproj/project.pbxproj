@@ -29,6 +29,9 @@
 		3268100E2631EE5E00912FFE /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3268100D2631EE5E00912FFE /* ProfileHeader.swift */; };
 		32931F5C2625BDB8001C0598 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32931F5B2625BDB8001C0598 /* FeedCell.swift */; };
 		32931F5F2625BEF8001C0598 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32931F5E2625BEF8001C0598 /* Extension.swift */; };
+		32AEED8226382461006C93D0 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEED8126382461006C93D0 /* UserService.swift */; };
+		32AEED85263824B2006C93D0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEED84263824B2006C93D0 /* Constants.swift */; };
+		32AEED8826382717006C93D0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEED8726382717006C93D0 /* User.swift */; };
 		32EB01A7262DCBE2001923B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32EB01A6262DCBE2001923B6 /* GoogleService-Info.plist */; };
 		A9E2B51B31926CFA189C43F9 /* Pods_CloneInstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637360A8AA86491C23D40A0A /* Pods_CloneInstagram.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +61,9 @@
 		3268100D2631EE5E00912FFE /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		32931F5B2625BDB8001C0598 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		32931F5E2625BEF8001C0598 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		32AEED8126382461006C93D0 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		32AEED84263824B2006C93D0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		32AEED8726382717006C93D0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		32EB01A6262DCBE2001923B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		55D141F0AF1EC9FC4DE66DDB /* Pods-CloneInstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloneInstagram.release.xcconfig"; path = "Target Support Files/Pods-CloneInstagram/Pods-CloneInstagram.release.xcconfig"; sourceTree = "<group>"; };
 		637360A8AA86491C23D40A0A /* Pods_CloneInstagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloneInstagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +134,7 @@
 			children = (
 				322A794F26305DF80003D011 /* ImageUploader.swift */,
 				322A795226305E0C0003D011 /* AuhtService.swift */,
+				32AEED8126382461006C93D0 /* UserService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -167,6 +174,7 @@
 		3232077C2621F05800AC1F45 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				32AEED8726382717006C93D0 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				32931F5E2625BEF8001C0598 /* Extension.swift */,
+				32AEED84263824B2006C93D0 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -331,12 +340,15 @@
 				3216F4C1262C95650030D011 /* AuthenticationViewModel.swift in Sources */,
 				32931F5F2625BEF8001C0598 /* Extension.swift in Sources */,
 				323207862621F23100AC1F45 /* SearchController.swift in Sources */,
+				32AEED8826382717006C93D0 /* User.swift in Sources */,
 				322A795326305E0C0003D011 /* AuhtService.swift in Sources */,
+				32AEED85263824B2006C93D0 /* Constants.swift in Sources */,
 				323207632621F04900AC1F45 /* AppDelegate.swift in Sources */,
 				323207942621F26E00AC1F45 /* ProfileController.swift in Sources */,
 				323207832621F22200AC1F45 /* FeedController.swift in Sources */,
 				3232077F2621F0D900AC1F45 /* MainTabController.swift in Sources */,
 				322A795026305DF80003D011 /* ImageUploader.swift in Sources */,
+				32AEED8226382461006C93D0 /* UserService.swift in Sources */,
 				3268100A2631EE1500912FFE /* ProfileCell.swift in Sources */,
 				323207652621F04900AC1F45 /* SceneDelegate.swift in Sources */,
 				32490353262A0322008D49E7 /* RegistrationController.swift in Sources */,
