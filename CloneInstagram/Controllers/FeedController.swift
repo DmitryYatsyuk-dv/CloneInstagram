@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-let reuseIdentifier = "Cell"
+private let reuseIdentifier = "Cell"
 
 
 class FeedController: UICollectionViewController {
