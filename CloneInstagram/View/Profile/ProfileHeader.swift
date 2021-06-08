@@ -8,6 +8,11 @@
 import UIKit
 import SDWebImage
 
+protocol profileHeaderDelegate: class {
+    func header(_ profileHeader: ProfileHeader, didTapActionButtonFor user: User)
+
+}
+
 class ProfileHeader: UICollectionReusableView {
     
     //MARK: - Properties
@@ -17,6 +22,8 @@ class ProfileHeader: UICollectionReusableView {
             configure()
         }
     }
+    
+    weak var delegate: profileHeaderDelegate?
     
     private let profileImageView: UIImageView = {
         let iv = UIImageView()
@@ -33,7 +40,7 @@ class ProfileHeader: UICollectionReusableView {
         return label
     }()
     
-    private lazy var editProfileFollowButtom: UIButton = {
+    private lazy var editProfileFollowButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Edit Profile", for: .normal)
         button.layer.cornerRadius = 3
@@ -106,8 +113,8 @@ class ProfileHeader: UICollectionReusableView {
         addSubview(nameLabel)
         nameLabel.anchor(top: profileImageView.bottomAnchor, left: leftAnchor, paddingTop:12, paddingLeft: 12)
         
-        addSubview(editProfileFollowButtom)
-        editProfileFollowButtom.anchor(top: nameLabel.bottomAnchor, left: leftAnchor,
+        addSubview(editProfileFollowButton)
+        editProfileFollowButton.anchor(top: nameLabel.bottomAnchor, left: leftAnchor,
                                        right: rightAnchor, paddingTop: 16,
                                        paddingLeft: 24, paddingRight: 24)
         
@@ -153,19 +160,23 @@ class ProfileHeader: UICollectionReusableView {
     
     @objc
     func handleEditProfileFollowTapped() {
-        print("DEBUG: Handle edit profile button...")
+        guard let viewModel = viewModel else { return }
+        delegate?.header(self, didTapActionButtonFor: viewModel.user)
     }
     
     //MARK: - Helpers
     
     func configure() {
-        print("DEBUG: Configure header with user info here..")
+//        print("DEBUG: Set header with user info here now..")
         
         guard let viewModel = viewModel else { return }
         
         nameLabel.text = viewModel.fullname
         profileImageView.sd_setImage(with: viewModel.profileImageUrl)
         
+        editProfileFollowButton.setTitle(viewModel.followButtonText, for: .normal)
+        editProfileFollowButton.setTitleColor(viewModel.followButtonTextColor, for: .normal)
+        editProfileFollowButton.backgroundColor = viewModel.followButtonBackgroundColor
     }
     
     func attributedStatText(value: Int, label: String) -> NSAttributedString {
